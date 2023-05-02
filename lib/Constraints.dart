@@ -22,6 +22,11 @@ LinearGradient kBlackGradient = const LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
 );
+LinearGradient kWhiteGradient = const LinearGradient(
+  colors: [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+);
 
 //TextStyles
 TextStyle kCTAText = TextStyle(
