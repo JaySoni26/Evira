@@ -11,6 +11,7 @@ class DoubleHeading extends StatelessWidget {
   final TextAlign secondTextAlign;
   final Color firstTextColor;
   final Color secondTextColor;
+  final CrossAxisAlignment columnAlignment;
 
   const DoubleHeading({
     Key? key,
@@ -23,11 +24,14 @@ class DoubleHeading extends StatelessWidget {
     required this.secondTextAlign,
     required this.firstTextColor,
     required this.secondTextColor,
+    required this.columnAlignment,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: columnAlignment,
       children: [
         Text(
           firstText,

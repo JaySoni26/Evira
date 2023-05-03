@@ -6,6 +6,8 @@ import 'package:evira_mark_2/Constraints.dart';
 import 'package:evira_mark_2/Components/Headings.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'ProfileSetup_Screen.dart';
+
 class Login_Screen extends StatelessWidget {
   const Login_Screen({super.key});
 
@@ -35,6 +37,7 @@ class Login_Screen extends StatelessWidget {
                 secondTextAlign: TextAlign.center,
                 firstTextColor: kBlack,
                 secondTextColor: kBlack,
+                columnAlignment:CrossAxisAlignment.center,
               ),
               Spacer(
                 flex: 2,
@@ -88,7 +91,13 @@ class Login_Screen extends StatelessWidget {
               TextLink(
                 Light_label: 'Don’t have an account ? ',
                 Dark_label: 'Sign up',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ProfileSetup_Screen()),
+                  );
+                },
               ),
               Spacer(),
             ],
