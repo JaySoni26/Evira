@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconly/iconly.dart';
 
 import '../Components/Buttons.dart';
+import '../Components/InputBox.dart';
 import '../Components/TopBar.dart';
 
 class ProfileSetup_Screen extends StatefulWidget {
@@ -15,6 +16,9 @@ class ProfileSetup_Screen extends StatefulWidget {
 }
 
 class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
+  TextEditingController phoneNumberController = TextEditingController();
+  String phoneNumber = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +50,16 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
                   secondTextColor: kTextLightBlack,
                   columnAlignment: CrossAxisAlignment.start,
                 ),
+                SizedBox(
+                  height: 24.h,
+                ),
+                Input_Box(
+                  placeholder: 'Phone Number',
+                  iconData: IconlyLight.call,
+                  changeIconData: IconlyBold.call,
+                  keyboardType: TextInputType.phone,
+                  controller: phoneNumberController,
+                ),
               ],
             ),
           ),
@@ -57,7 +71,12 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
         child: HorizontalButton(
           label: 'Continue',
           color: kBlackGradient,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              phoneNumber = phoneNumberController.text;
+            });
+            print('Phone number: $phoneNumber');
+          },
           textColor: kWhite,
           boxShadow: true,
           border: false,
