@@ -1,3 +1,4 @@
+import 'package:evira_mark_2/Components/Dropdown.dart';
 import 'package:evira_mark_2/Components/Headings.dart';
 import 'package:evira_mark_2/Constraints.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,8 @@ import 'package:iconly/iconly.dart';
 import '../Components/Buttons.dart';
 import '../Components/InputBox.dart';
 import '../Components/TopBar.dart';
+
+//Store all the written data in the variable created below and print them in terminal as well
 
 class ProfileSetup_Screen extends StatefulWidget {
   const ProfileSetup_Screen({super.key});
@@ -24,6 +27,7 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
   String dob = '';
   TextEditingController emailController = TextEditingController();
   String email = '';
+  String gender = '';
   bool areAllFieldsFilledIn = false;
 
   @override
@@ -139,7 +143,20 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
                   controller: phoneNumberController,
                 ),
                 SizedBox(
-                  height: 24,
+                  height: 14,
+                ),
+                DropdownExpansionTile(
+                  title: 'Gender',
+                  options: ['Male', 'Female', 'Others'],
+                  selectedOption: gender,
+                  onChanged: (option) {
+                    setState(() {
+                      gender = option;
+                    });
+                  },
+                ),
+                SizedBox(
+                  height: 100,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -167,7 +184,9 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
             print('Phone number: $dob');
             print('Phone number: $email');
             print('Phone number: $phoneNumber');
+            print('Gender: $gender');
             closeKeyboard(context);
+            //Navigator Function
           },
           textColor: kWhite,
           boxShadow: true,
