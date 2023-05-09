@@ -18,11 +18,27 @@ class ProfileSetup_Screen extends StatefulWidget {
 class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
   TextEditingController phoneNumberController = TextEditingController();
   String phoneNumber = '';
+  TextEditingController fullNameController = TextEditingController();
+  String fullName = '';
+  TextEditingController dobController = TextEditingController();
+  String dob = '';
+  TextEditingController emailController = TextEditingController();
+  String email = '';
+  bool areAllFieldsFilledIn = false;
 
   @override
   void dispose() {
     super.dispose();
     //phoneNumberController.dispose();
+  }
+
+  void checkFields() {
+    setState(() {
+      areAllFieldsFilledIn = fullName.isNotEmpty &&
+          dob.isNotEmpty &&
+          email.isNotEmpty &&
+          phoneNumber.isNotEmpty;
+    });
   }
 
   void closeKeyboard(BuildContext context) {
@@ -34,10 +50,12 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(top: 24, bottom: 0, left: 24, right: 24),
           child: SingleChildScrollView(
+            reverse: true,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,12 +83,67 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
                 SizedBox(
                   height: 24.h,
                 ),
+                Container(
+                  height: 100.h,
+                  width: 100.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100.h),
+                    border: Border.all(color: kBorderColor, width: 1.5),
+                  ),
+                  child: IconButton(
+                    icon: Icon(
+                      IconlyLight.camera,
+                      size: 32.h,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                SizedBox(
+                  height: 24.h,
+                ),
+                Input_Box(
+                  placeholder: 'Full Name',
+                  iconData: IconlyLight.profile,
+                  changeIconData: IconlyBold.profile,
+                  keyboardType: TextInputType.text,
+                  controller: fullNameController,
+                ),
+                SizedBox(
+                  height: 14.h,
+                ),
+                Input_Box(
+                  placeholder: 'DOB',
+                  iconData: IconlyLight.calendar,
+                  changeIconData: IconlyBold.calendar,
+                  keyboardType: TextInputType.datetime,
+                  controller: dobController,
+                ),
+                SizedBox(
+                  height: 14.h,
+                ),
+                Input_Box(
+                  placeholder: 'Email',
+                  iconData: IconlyLight.message,
+                  changeIconData: IconlyBold.message,
+                  keyboardType: TextInputType.emailAddress,
+                  controller: emailController,
+                ),
+                SizedBox(
+                  height: 14.h,
+                ),
                 Input_Box(
                   placeholder: 'Phone Number',
                   iconData: IconlyLight.call,
                   changeIconData: IconlyBold.call,
-                  keyboardType: TextInputType.phone,
+                  keyboardType: TextInputType.number,
                   controller: phoneNumberController,
+                ),
+                SizedBox(
+                  height: 24,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).viewInsets.bottom),
                 ),
               ],
             ),
@@ -86,7 +159,13 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
           onPressed: () {
             setState(() {
               phoneNumber = phoneNumberController.text;
+              email = emailController.text;
+              fullName = fullNameController.text;
+              dob = dobController.text;
             });
+            print('Phone number: $fullName');
+            print('Phone number: $dob');
+            print('Phone number: $email');
             print('Phone number: $phoneNumber');
             closeKeyboard(context);
           },

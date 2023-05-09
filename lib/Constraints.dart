@@ -17,6 +17,7 @@ Color kTextLightBlack = const Color(0xFF7B7B7B);
 Color kUnactive = const Color(0xFF9E9E9E);
 Color kGrey = const Color(0xFFF3F3F3);
 Color kWhite = const Color(0xFFFFFFFFF);
+Color kBorderColor = Colors.black.withOpacity(0.15);
 LinearGradient kBlackGradient = const LinearGradient(
   colors: [Color(0xFF101010), Color(0xFF313130)],
   begin: Alignment.topLeft,

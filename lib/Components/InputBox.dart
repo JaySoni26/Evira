@@ -132,7 +132,7 @@ class _Input_BoxState extends State<Input_Box> {
           _isFocused = false;
         });
       },
-      onSubmitted: (value) {
+      onSubmitted: (String value) {
         setState(() {
           _isFocused = false;
         });
