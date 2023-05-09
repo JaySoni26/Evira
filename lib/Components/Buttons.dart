@@ -68,7 +68,7 @@ class HorizontalButton extends StatelessWidget {
                   width: 24.h,
                   height: 24.w,
                 ),
-              SizedBox(width: 12.w),
+              SizedBox(width: 12),
               Text(
                 label,
                 style: kCTAText.copyWith(color: textColor),

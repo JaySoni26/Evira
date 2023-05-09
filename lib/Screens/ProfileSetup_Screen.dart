@@ -20,6 +20,18 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
   String phoneNumber = '';
 
   @override
+  void dispose() {
+    super.dispose();
+    //phoneNumberController.dispose();
+  }
+
+  void closeKeyboard(BuildContext context) {
+    FocusScopeNode currentFocus = FocusScope.of(context);
+    if (!currentFocus.hasPrimaryFocus) {
+      currentFocus.unfocus();
+    }
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -76,6 +88,7 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
               phoneNumber = phoneNumberController.text;
             });
             print('Phone number: $phoneNumber');
+            closeKeyboard(context);
           },
           textColor: kWhite,
           boxShadow: true,

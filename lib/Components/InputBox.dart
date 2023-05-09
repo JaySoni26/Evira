@@ -119,7 +119,6 @@ class _Input_BoxState extends State<Input_Box> {
       ),
       onChanged: (value) {
         setState(() {
-          _textEditingController.text = value;
           _isFocused = value.isNotEmpty;
         });
       },
