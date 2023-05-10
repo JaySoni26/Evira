@@ -4,7 +4,6 @@ import 'package:evira_mark_2/Constraints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconly/iconly.dart';
-
 import '../Components/Buttons.dart';
 import '../Components/InputBox.dart';
 import '../Components/TopBar.dart';
@@ -20,22 +19,17 @@ class ProfileSetup_Screen extends StatefulWidget {
 
 class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
   TextEditingController phoneNumberController = TextEditingController();
-  String phoneNumber = '';
   TextEditingController fullNameController = TextEditingController();
-  String fullName = '';
   TextEditingController dobController = TextEditingController();
-  String dob = '';
   TextEditingController emailController = TextEditingController();
+  String phoneNumber = '';
+  String fullName = '';
+  String dob = '';
   String email = '';
   String gender = '';
   bool areAllFieldsFilledIn = false;
 
   @override
-  void dispose() {
-    super.dispose();
-    //phoneNumberController.dispose();
-  }
-
   void checkFields() {
     setState(() {
       areAllFieldsFilledIn = fullName.isNotEmpty &&
@@ -180,9 +174,9 @@ class _ProfileSetup_ScreenState extends State<ProfileSetup_Screen> {
               fullName = fullNameController.text;
               dob = dobController.text;
             });
-            print('Phone number: $fullName');
-            print('Phone number: $dob');
-            print('Phone number: $email');
+            print('Full Name: $fullName');
+            print('Date of Birth: $dob');
+            print('Email: $email');
             print('Phone number: $phoneNumber');
             print('Gender: $gender');
             closeKeyboard(context);

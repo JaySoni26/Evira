@@ -1,11 +1,13 @@
 import 'package:evira_mark_2/Components/Buttons.dart';
 import 'package:evira_mark_2/Components/Divider.dart';
 import 'package:evira_mark_2/Components/TextLink.dart';
+import 'package:evira_mark_2/Screens/EmailLogin_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:evira_mark_2/Constraints.dart';
 import 'package:evira_mark_2/Components/Headings.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'PhoneNumberLogin_Screen.dart';
 import 'ProfileSetup_Screen.dart';
 
 class Login_Screen extends StatelessWidget {
@@ -37,7 +39,7 @@ class Login_Screen extends StatelessWidget {
                 secondTextAlign: TextAlign.center,
                 firstTextColor: kBlack,
                 secondTextColor: kBlack,
-                columnAlignment:CrossAxisAlignment.center,
+                columnAlignment: CrossAxisAlignment.center,
               ),
               Spacer(
                 flex: 2,
@@ -65,9 +67,15 @@ class Login_Screen extends StatelessWidget {
               ),
               SizedBox(height: 14.h),
               HorizontalButton(
-                label: 'Continue with Apple',
+                label: 'Continue with Evira',
                 color: kWhiteGradient,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => EmailLogin_Screen()),
+                  );
+                },
                 textColor: kTextBlack,
                 boxShadow: false,
                 border: true,
@@ -80,7 +88,13 @@ class Login_Screen extends StatelessWidget {
               HorizontalButton(
                 label: 'Continue with Phone Number',
                 color: kBlackGradient,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PhoneNumberLogin_Screen()),
+                  );
+                },
                 textColor: kWhite,
                 boxShadow: true,
                 border: false,

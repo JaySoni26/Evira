@@ -39,6 +39,7 @@ dependencies:
   iconly: ^1.0.1
   flutter_svg: ^2.0.5
   flutter_screenutil: ^5.7.0
+  flutter_otp_text_field: ^1.1.1
 
 dev_dependencies:
   flutter_test:
