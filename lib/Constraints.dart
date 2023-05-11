@@ -75,3 +75,12 @@ TextStyle kBottomSheetHeading = TextStyle(
   fontWeight: FontWeight.w600,
   fontSize: 20.sp,
 );
+
+//Controllers
+TextEditingController EmailController = TextEditingController();
+TextEditingController PasswordController = TextEditingController();
+TextEditingController phoneNumberController = TextEditingController();
+TextEditingController fullNameController = TextEditingController();
+TextEditingController dobController = TextEditingController();
+
+//Vars
