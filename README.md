@@ -1,18 +1,15 @@
-# evira_mark_2
+# Evira - Ecommerce App
 
-A new Flutter project.
+<img width="1680" alt="TV - 1" src="https://user-images.githubusercontent.com/106761357/209262982-4e0e2c59-aaa1-4b06-b9cb-fd6847610879.png">
 
-## Getting Started
+->Developed the "Evira Ecommerce App" from scratch, leveraging Flutter for the frontend, Node.js for the backend, and MongoDB for the database.
 
-This project is a starting point for a Flutter application.
+->Utilized Flutter's robust UI toolkit to design and implement a visually appealing and responsive user interface, ensuring an exceptional user experience.
 
-A few resources to get you started if this is your first Flutter project:
+->Leveraged Node.js to build a scalable and performant backend, enabling seamless communication between the frontend and the database.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+->implemented secure authentication and authorization mechanisms, guaranteeing user privacy and data protection.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Evira
-# Evira
+->Optimized the application's performance by employing industry best practices and conducting rigorous testing, resulting in reduced loading times and improved overall efficiency.
+
+->Developed Responsive Frontend UI for IOS & Android
