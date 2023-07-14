@@ -1,7 +1,7 @@
 # Evira - Ecommerce App
+<img width="2800" alt="EviraCover" src="https://github.com/JaySoni26/Evira/assets/106761357/d48cd84a-f046-4c4c-9627-e5be495a6c08">
 
-<img width="1680" alt="TV - 1" src="https://user-images.githubusercon<img width="2800" alt="EviraCover" src="https://github.com/JaySoni26/Evira/assets/106761357/f06b66b7-3d65-4e0f-973d-dffaf11a2662">
-tent.com/106761357/209262982-4e0e2c59-aaa1-4b06-b9cb-fd6847610879.png">
+
 
 ->Developed the "Evira Ecommerce App" from scratch, leveraging Flutter for the frontend, Node.js for the backend, and MongoDB for the database.
 
